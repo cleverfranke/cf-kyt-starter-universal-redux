@@ -1,0 +1,21 @@
+
+@import '../../shared-styles/variables';
+
+.countButton {
+  display: inline-block;
+  position: relative;
+  margin: 0 4px 4px 0;
+  padding: 12px 14px;
+  color: rgb(0, 0, 0);
+  line-height: 1.8571428571;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  background: 0 0;
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+  z-index: 0;
+  transition: color 250ms ease,opacity 250ms ease;
+  user-select: none;
+  font-size: 14px;
+  font-weight: bold;
+}

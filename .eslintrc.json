@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "./node_modules/kyt/config/.eslintrc.base.json"
+  ],
+
+  "env": {
+  },
+
+  "plugins": [
+  ],
+
+  "rules": {
+  }
+}

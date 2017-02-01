@@ -1,0 +1,16 @@
+
+@import '../../shared-styles/variables';
+
+.tool a {
+  color: black;
+  font-weight: bold;
+  transition: all $default-transition;
+  &:hover {
+    color: rgb(77, 77, 77);
+    text-decoration: none;
+  }
+}
+
+.tool + .tool {
+  padding-top: 0.5em;
+}
