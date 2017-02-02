@@ -4,7 +4,7 @@
   "description": "A starter kyt with React, Redux, SSR and data fetching.",
   "main": "index.js",
   "scripts": {
-    "build": "kyt build && sw-precache --config=sw-precache-config.js",
+    "build": "kyt build && sw-precache --config=sw-precache-config.js"
   },
   "repository": {
     "type": "git",
