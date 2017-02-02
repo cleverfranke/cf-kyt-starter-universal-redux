@@ -38,5 +38,4 @@ The libraries listed here are not present by default in the NYT React Universal 
 - We modified the build scripts to automatically generate a service worker file with the help of sw-precache
 
 ## Changelog
-- 1.1.0 - Adding Service Worker support
-- 1.0.0 - First release
+See the [releases](https://github.com/cleverfranke/cf-kyt-starter-universal-redux/releases) on Github
