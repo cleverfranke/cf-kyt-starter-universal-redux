@@ -2,14 +2,14 @@
 
 This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks and Async data loading on the server.
 
-## Installation
+It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you should use it.
 
-Create a new directory and install [kyt](https://github.com/NYTimes/kyt)
+## Installation
 
 1. `git init`
 2. `npm init`
 3. `npm install --save kyt@0.3.0`
-4. `node_modules/.bin/kyt setup -r git@bitbucket.org:cleverfranke/cf-kyt-starter-universal-redux.git#feature/sw-precache`
+4. `node_modules/.bin/kyt setup -r git@bitbucket.org:cleverfranke/cf-kyt-starter-universal-redux.git`
 5. `npm run dev` and start hacking away
 
 ## Tools
