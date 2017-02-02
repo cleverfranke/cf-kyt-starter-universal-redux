@@ -37,7 +37,7 @@ export default function Addons() {
         <code>src/server/index.js</code> starting from line 65. If you want to see
         an example of how to use this in your components you can read the source of
         <code>src/containers/Addons</code>. Please be aware that in order to resolve
-          these promises the component needs to a top level component.
+          these promises the component needs to be a top level component.
       </p>
     </section>
   );
