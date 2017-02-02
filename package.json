@@ -1,9 +1,10 @@
 {
   "name": "cf-kyt-starter-universal-redux",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "A starter kyt with React, Redux, SSR and data fetching.",
   "main": "index.js",
   "scripts": {
+    "build": "kyt build && sw-precache --config=sw-precache-config.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
   "homepage": "https://github.com/cleverfranke/cf-kyt-starter-universal-redux#readme",
   "kyt": {
     "version": "^0.3.0",
-    "files": [".eslintrc.json"]
+    "files": [".eslintrc.json", "sw-precache-config.js"],
+    "scripts": ["build"]
   },
   "dependencies": {
     "babel-eslint": "^6.1.2",
@@ -39,6 +41,7 @@
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "sw-precache": "^4.3.0"
   }
 }

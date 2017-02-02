@@ -16,6 +16,7 @@ export default (vo) => {
         ${head.meta.toString()}
         ${head.link.toString()}
         <link id="favicon" rel="shortcut icon" href="/favicon.png" sizes="16x16 32x32" type="image/png" />
+        <link rel="manifest" href="manifest.json">
         ${vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : ''}
       </head>
       <body>

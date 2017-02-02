@@ -2,9 +2,9 @@
 
 This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks and Async data loading on the server.
 
-## Installation
+It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you should use it.
 
-Create a new directory and install [kyt](https://github.com/NYTimes/kyt)
+## Installation
 
 1. `git init`
 2. `npm init`
@@ -33,14 +33,10 @@ The libraries listed here are not present by default in the NYT React Universal 
 - [Perf Addons](https://www.npmjs.com/package/react-addons-perf) - React Perf Addons for easy debugging of your web applications performance. We recommend using something like the [React Perf extension](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm) to hook into the Perf Addons and perform your tests.
 
 ## Architecture changes
-We've modified the Express configuration to return 404 status codes when showing a 404 NotFound component. We also modified the configuration to detect Async methods on route components and delay returning HTML until the promise is resolved and optionally the store is populated with the response of these Async requests.
-
-## Notes on implementation
-
-- As a performance optimization, React Router routes are loaded dynamically and chunked separately using the ES2015 `System.import` directive. See more about  [Webpack 2 support](https://gist.github.com/sokra/27b24881210b56bbaff7#code-splitting-with-es6) and [dynamic routing](https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md).
-
-## How To Contribute
-Want to build your own starter-kyt?
-See directions [here](https://github.com/NYTimes/kyt/blob/master/docs/Starterkyts.md).
+- We modified the Express configuration to return 404 status codes when showing a 404 NotFound component.
+- We modified the Express configuration to detect Async methods on route components and delay returning HTML until the promise is resolved and optionally the store is populated with the response of these Async requests.
+- We modified the build scripts to automatically generate a service worker file with the help of sw-precache
 
 ## Changelog
+- 1.1.0 - Adding Service Worker support
+- 1.0.0 - First release
