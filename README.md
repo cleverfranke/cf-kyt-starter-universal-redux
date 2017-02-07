@@ -9,7 +9,7 @@ It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you
 1. `git init`
 2. `npm init`
 3. `npm install --save kyt@0.3.0`
-4. `node_modules/.bin/kyt setup -r git@bitbucket.org:cleverfranke/cf-kyt-starter-universal-redux.git`
+4. `node_modules/.bin/kyt setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
 5. `npm run dev` and start hacking away
 
 ## Tools
