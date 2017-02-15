@@ -6,11 +6,19 @@ It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you
 
 ## Installation
 
-1. `git init`
+Generally speaking we feel it's a better idea to install packages locally than globally. That's why our setup instructions differ a little bit from the kyt general installation instructions. If you find any bug try to see if [installing the official way](https://github.com/NYTimes/kyt#quick-start) helps and please let us know by submitting an issue.
+
+1. Go to the folder where you want to install the starter-kyt
 2. `npm init`
-3. `npm install --save kyt@0.3.0`
-4. `node_modules/.bin/kyt setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
+3. `npm install --save-dev kyt-cli`
+4. `node_modules/.bin/kyt-cli setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
 5. `npm run dev` and start hacking away
+
+Note: When working on this repository and testing local changes before submitting them to Github you can use a different setup command.
+
+```bash
+node_modules/.bin/kyt-cli setup -r kyt/.git --repository-path ../cf-kyt-starter-universal-redux
+```
 
 ## Tools
 

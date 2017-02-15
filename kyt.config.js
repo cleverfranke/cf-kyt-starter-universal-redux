@@ -7,15 +7,6 @@ module.exports = {
   modifyWebpackConfig: (baseConfig, options) => {
     const appConfig = Object.assign({}, baseConfig);
     const babelLoader = appConfig.module.rules.find(loader => loader.loader === 'babel-loader');
-    babelLoader.options.plugins.push(
-        'babel-plugin-transform-class-properties',
-        'babel-plugin-transform-object-rest-spread'
-      );
-
-    // add babel-polyfill entry for client only
-    if (options.type === 'client') {
-      appConfig.entry.main.unshift('babel-polyfill');
-    }
 
     // Exclude inline.svg from url-loader
     const urlLoader = appConfig.module.rules.find(loader => loader.loader === 'url-loader');
