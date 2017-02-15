@@ -14,12 +14,6 @@ Generally speaking we feel it's a better idea to install packages locally than g
 4. `node_modules/.bin/kyt-cli setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
 5. `npm run dev` and start hacking away
 
-Note: When working on this repository and testing local changes before submitting them to Github you can use a different setup command.
-
-```bash
-node_modules/.bin/kyt-cli setup -r kyt/.git --repository-path ../cf-kyt-starter-universal-redux
-```
-
 ## Tools
 
 The following are some of the tools included in this starter-kyt:
