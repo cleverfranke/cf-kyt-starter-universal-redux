@@ -3,45 +3,72 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import classNames from 'classnames/bind';
+
 import styles from './styles.scss';
-import { shouldIncrement } from '../../redux/reducers/modules/counter';
+import { shouldIncrement, promiseIncrement } from '../../redux/reducers/modules/counter';
 
 export function Count(props) {
+  const cx = classNames.bind(styles);
+  const asyncButtonClass = cx({
+    countButton: true,
+    inProgress: props.promisePending,
+  });
   return (
     <div>
-      <p>Count value: <strong>{ props.count }</strong></p>
+      <p>Count: <strong>{ props.count }</strong></p>
+      <p>Promise resolve count: <strong>{ props.promiseCount }</strong></p>
+      <p>Promise rejection count: <strong>{ props.rejectionCount }</strong></p>
       <p>When loading this page (directly) for the first time it should show a value of:</p>
       <ul className="list">
         <li>
-          <strong>10</strong> when Redux works
+          <strong>0</strong> when Redux works
         </li>
         <li>
-          <strong>11</strong> when Redux SSR works
+          <strong>1</strong> when Redux SSR works
         </li>
         <li>
-          <strong>12</strong> when store hydration works
+          <strong>2</strong> when store hydration works
         </li>
       </ul>
       <button
         className={styles.countButton}
-        onClick={() => props.shouldIncrement()}
+        onClick={props.shouldIncrement}
       >
         Increment count
+      </button>
+      <button
+        className={asyncButtonClass}
+        onClick={props.promiseIncrement}
+      >
+        Promised increment count
       </button>
     </div>
   );
 }
 Count.propTypes = {
   count: PropTypes.number.isRequired,
+  promiseCount: PropTypes.number.isRequired,
+  promisePending: PropTypes.bool.isRequired,
+  rejectionCount: PropTypes.number.isRequired,
+  promiseIncrement: PropTypes.func.isRequired,
   shouldIncrement: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
-  return { count: state.counter.count };
+  return {
+    count: state.counter.count,
+    promisePending: state.counter.promisePending,
+    promiseCount: state.counter.promiseCount,
+    rejectionCount: state.counter.rejectionCount,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ shouldIncrement }, dispatch);
+  return {
+    promiseIncrement: bindActionCreators(promiseIncrement, dispatch),
+    shouldIncrement: bindActionCreators(shouldIncrement, dispatch),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Count);

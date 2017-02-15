@@ -48,7 +48,7 @@ export class ReduxContainer extends Component {
         </p>
         <p>
           Keep in mind the counter is only showing a valid result when opening this page directly
-          from the server. If you do not see a value of 12, please check if refreshing
+          from the server. If you do not see a value of 2, please check if refreshing
           this page helps. If it does not, check if your JavaScript is
           running client-side?
         </p>
