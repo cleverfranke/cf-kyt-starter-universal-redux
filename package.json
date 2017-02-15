@@ -1,6 +1,6 @@
 {
   "name": "cf-kyt-starter-universal-redux",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A starter kyt with React, Redux, SSR and data fetching.",
   "main": "index.js",
   "scripts": {

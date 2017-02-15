@@ -1,6 +1,8 @@
 // Base kyt config.
 // Edit these properties to make changes.
 
+const webpack = require('webpack');
+
 module.exports = {
   reactHotLoader: true,
   debug: false,
@@ -36,6 +38,15 @@ module.exports = {
       ],
     };
     appConfig.module.rules.unshift(svgRules);
+
+    // Makes sure we can differentiate between client and server environments
+    // in our React codebase
+    baseConfig.plugins.push(
+      new webpack.DefinePlugin({
+        __CLIENT__: options.type === 'client',
+        __SERVER__: options.type !== 'client',
+      })
+    );
 
     return appConfig;
   },

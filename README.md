@@ -38,6 +38,7 @@ The libraries listed here are not present by default in the NYT React Universal 
 - We modified the Express configuration to return 404 status codes when showing a 404 NotFound component.
 - We modified the Express configuration to detect Async methods on route components and delay returning HTML until the promise is resolved and optionally the store is populated with the response of these Async requests.
 - We modified the build scripts to automatically generate a service worker file with the help of sw-precache
+- You can check if you are working in a server or client environment by checking the `__SERVER__` and `__CLIENT__` variables.
 
 ## Changelog
 See the [releases](https://github.com/cleverfranke/cf-kyt-starter-universal-redux/releases) on Github

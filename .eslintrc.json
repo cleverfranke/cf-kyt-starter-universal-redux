@@ -11,5 +11,11 @@
   ],
 
   "rules": {
+  },
+
+  "globals": {
+    "__SERVER__": true,
+    "__CLIENT__": true
   }
+
 }
