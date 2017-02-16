@@ -4,9 +4,10 @@ const srcPath = 'src/';
 module.exports = {
   stripPrefix: `${publicPath}`,
   // Which files to we want to cache?
+  // Make sure to exclude the service-worker and sourcMap files
   staticFileGlobs: [
     `${publicPath}manifest.json`,
-    `${publicPath}**/!(*map*)`,
+    `${publicPath}**/!(*worker.js*|*map*)`,
   ],
   // This makes sure the serviceworker knows how to cache the
   // index route. The dependencies listed below here are used
@@ -21,7 +22,6 @@ module.exports = {
   // This ensures that calls to directories that aren't cached yet
   // get proxied to the indexRoute. Client-side rendering can take over
   // after that.
-
   navigateFallback: '/',
   dontCacheBustUrlsMatching: /\.\w{8}\./,
   // Filename of the service-worker

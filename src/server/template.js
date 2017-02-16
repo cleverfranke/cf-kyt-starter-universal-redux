@@ -24,16 +24,16 @@ export default (vo) => {
         <script>
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
-        <script src="${vo.jsBundle}"></script>
-        <script>
-          if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-              navigator.serviceWorker.register('/service-worker.js');
-            });
-          }
-        </script>
+        <script async src="${vo.jsBundle}"></script>
+        ${__PRODUCTION__ ? `
+          <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js');
+              });
+            }
+          </script>` : ''}
       </body>
-
     </html>
   `;
 };

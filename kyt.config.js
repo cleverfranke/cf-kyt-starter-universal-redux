@@ -45,6 +45,7 @@ module.exports = {
       new webpack.DefinePlugin({
         __CLIENT__: options.type === 'client',
         __SERVER__: options.type !== 'client',
+        __PRODUCTION__: options.environment === 'production',
       })
     );
 
