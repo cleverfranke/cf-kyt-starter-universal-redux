@@ -25,6 +25,13 @@ export default (vo) => {
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
         <script src="${vo.jsBundle}"></script>
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+              navigator.serviceWorker.register('/service-worker.js');
+            });
+          }
+        </script>
       </body>
 
     </html>
