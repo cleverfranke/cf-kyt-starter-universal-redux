@@ -29,6 +29,7 @@ The following are some of the tools included in this starter-kyt:
 The libraries listed here are not present by default in the NYT React Universal Starter Kyt. We added them because we believe they are useful to the majority of the applications we develop.
 
 - [Redux and Redux DevTools](https://github.com/reactjs/redux) - State management. Press CTRL-H to see the DevTools Monitor.
+- [Storybook](https://getstorybook.io/) - Isolated component development and component library
 - [Redux-Thunks](https://github.com/gaearon/redux-thunk) - Thunk middleware for React Redux
 - [Helmet](https://github.com/nfl/react-helmet) - This reusable React component will manage all of your changes to the document head with support for document title, meta, link, style, script, noscript, and base tags.
 - [React SVG loader](https://github.com/boopathi/react-svg-loader) - Used to load SVG files with Webpack and use them as React Components. This inlines the SVG and allows us to style it with CSS and keep our code clean and 'dry'.

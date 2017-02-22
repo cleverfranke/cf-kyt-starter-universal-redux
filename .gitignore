@@ -25,6 +25,7 @@ node_modules
 
 # build directory
 build
+.out
 
 # Optional npm cache directory
 .npm
