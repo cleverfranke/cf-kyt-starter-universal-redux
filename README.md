@@ -1,6 +1,6 @@
 # CLEVER°FRANKE Universal React starter-kyt
 
-This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks and Async data loading on the server.
+This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks, Storybook and Async data loading on the server.
 
 It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you should use it.
 
@@ -8,11 +8,28 @@ It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you
 
 Generally speaking we feel it's a better idea to install packages locally than globally. That's why our setup instructions differ a little bit from the kyt general installation instructions. If you find any bug try to see if [installing the official way](https://github.com/NYTimes/kyt#quick-start) helps and please let us know by submitting an issue.
 
-1. Go to the folder where you want to install the starter-kyt
-2. `npm init`
-3. `npm install --save-dev kyt-cli`
+The instructions assume you have Yarn already installed. If not, [install Yarn](https://yarnpkg.com/lang/en/docs/install/). Most of use use [Homebrew](https://brew.sh/) for stuff like that.
+
+1. Go to the folder where you want to install the starter-kyt.
+2. `yarn init`
+Use your own settings or press enter until it's done
+3. `yarn add kyt-cli --dev`
 4. `node_modules/.bin/kyt-cli setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
-5. `npm run dev` and start hacking away
+
+After installation these commands are useful to learn
+
+#### Start a development server
+`yarn dev`
+
+#### Develop components in isolation within Storybook
+`yarn storybook`
+
+#### Create a static version of Storybook for deployment
+`yarn build-storybook`
+
+#### Start a production server
+`yarn build && yarn start`
+
 
 ## Tools
 
