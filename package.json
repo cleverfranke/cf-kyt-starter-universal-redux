@@ -1,6 +1,6 @@
 {
   "name": "cf-kyt-starter-universal-redux",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A starter kyt with React, Redux, SSR and data fetching.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/cleverfranke/cf-kyt-starter-universal-redux#readme",
   "kyt": {
     "version": "^0.4.0",
-    "files": [".eslintrc.json", "sw-precache-config.js", ".storybook", "stories"],
+    "files": [".eslintrc.json", "sw-precache-config.js", ".storybook", "stories", "kyt.config.production.js"],
     "scripts": ["build", "storybook", "build-storybook"]
   },
   "dependencies": {
