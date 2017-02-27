@@ -8,7 +8,7 @@ It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you
 
 Generally speaking we feel it's a better idea to install packages locally than globally. That's why our setup instructions differ a little bit from the kyt general installation instructions. If you find any bug try to see if [installing the official way](https://github.com/NYTimes/kyt#quick-start) helps and please let us know by submitting an issue.
 
-The instructions assume you have Yarn already installed. If not, [install Yarn](https://yarnpkg.com/lang/en/docs/install/). Most of use use [Homebrew](https://brew.sh/) for stuff like that.
+The instructions assume you have Yarn already installed. If not, [install Yarn](https://yarnpkg.com/lang/en/docs/install/). Most of us use [Homebrew](https://brew.sh/) for stuff like that.
 
 1. Go to the folder where you want to install the starter-kyt.
 2. `yarn init`
