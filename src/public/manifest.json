@@ -1,6 +1,8 @@
 {
-  "short_name": "cf-starter-kyt",
+  "short_name": "cf-kyt",
   "name": "C°F Universal React Starter Kyt",
+  "background_color": "white",
+  "theme_color": "white",
   "icons": [
     {
       "src": "favicon.png",

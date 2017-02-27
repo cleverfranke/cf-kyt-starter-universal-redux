@@ -12,6 +12,7 @@ export default (vo) => {
         <meta charSet='utf-8' />
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="white" />
         ${head.title.toString()}
         ${head.meta.toString()}
         ${head.link.toString()}
