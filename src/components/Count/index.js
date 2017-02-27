@@ -17,9 +17,7 @@ export function Count(props) {
   return (
     <div>
       <p>Count: <strong>{ props.count }</strong></p>
-      <p>Promise resolve count: <strong>{ props.promiseCount }</strong></p>
-      <p>Promise rejection count: <strong>{ props.rejectionCount }</strong></p>
-      <p>When loading this page (directly) for the first time it should show a value of:</p>
+      <p>When loading this page (directly) for the first time the count should show a value of:</p>
       <ul className="list">
         <li>
           <strong>0</strong> when Redux works
@@ -31,6 +29,13 @@ export function Count(props) {
           <strong>2</strong> when store hydration works
         </li>
       </ul>
+      <p>
+        Promise resolve count: <strong>{ props.promiseCount }</strong><br />
+        Promise rejection count: <strong>{ props.rejectionCount }</strong>
+      </p>
+      <p>When loading this page (directly) for the first time one of the promise counts
+      should be 1.</p>
+
       <button
         className={styles.countButton}
         onClick={props.shouldIncrement}

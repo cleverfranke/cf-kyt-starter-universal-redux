@@ -26,15 +26,15 @@ export default function Addons() {
       </p>
       <p>
         To tackle this problem we added a few lines of code in the Express routing methods
-        which search for the static method fetchData whenever it loads a component
-        through React-Router. In this method we allow you to write Promises.
-        These promises are guaranteed to be resolved before sending down the HTML response.
-        This means you can use the Redux dispatch API to call some
-        redux action creators and populate your redux store for your first render.
+        which search for the static array needs whenever it loads a component
+        through React-Router. In this array we allow you to list promises on which the
+        container depends. These promises are guaranteed to be resolved before sending
+        down the HTML response. This means you can list redux action creators and
+        populate your redux store for your first render.
       </p>
       <p>
         You can find the code responsible for handling these promises in
-        <code>src/server/index.js</code> starting from line 65. If you want to see
+        <code>src/server/index.js</code> starting from lines 36 and 84. If you want to see
         an example of how to use this in your components you can read the source of
         <code>src/containers/Addons</code>. Please be aware that in order to resolve
           these promises the component needs to be a top level component.

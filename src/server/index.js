@@ -27,6 +27,20 @@ app.use(compression());
 // Setup the public directory so that we can serve static assets.
 app.use(express.static(path.join(process.cwd(), KYT.PUBLIC_DIR)));
 
+/**
+ * This method creates an array of promises to resolve before Express
+ * calls the render method, useful for loading async data
+ * Note: Redux-thunk action creators also work when passed as a need in
+ * the static needs array, as long as they are not async
+ */
+function fetchComponentData(dispatch, components, params) {
+  const needs = components.reduce((prev, current) => (current.needs || [])
+      .concat(prev)
+  , []);
+  const promises = needs.map(need => dispatch(need(params)));
+  return Promise.all(promises);
+}
+
 // Setup server side routing.
 app.use((request, response) => {
   const history = createMemoryHistory(request.originalUrl);
@@ -67,18 +81,8 @@ app.use((request, response) => {
       // Fetch the components from the renderProps and when they have
       // promises, add them to a list of promises to resolve before starting
       // a HTML response
-      const promises = renderProps.components
-        .filter(component => !!component && !!component.fetchData)
-        .map(component => component.fetchData(store.dispatch, renderProps));
-
-      if (!promises.length) {
-        render();
-      } else {
-        Promise.all(promises)
-           .then(() => {
-             render();
-           });
-      }
+      fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
+        .then(render);
     } else {
       response.status(404).send('Not found');
     }

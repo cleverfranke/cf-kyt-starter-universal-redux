@@ -2,13 +2,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import styles from './styles.scss';
-
 function NotFound() {
   return (
     <section>
       <Helmet title="404 not found" />
-      <p className={styles.paragraph}>
+      <p >
         We could not find the thing you were looking for. Sorry!
       </p>
       <p>However, if you check your network panel when loading this page or any other
