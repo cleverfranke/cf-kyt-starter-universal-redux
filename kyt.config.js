@@ -6,6 +6,18 @@ const webpack = require('webpack');
 module.exports = {
   reactHotLoader: true,
   debug: false,
+  modifyJestConfig: (baseConfig) => {
+    // modify baseConfig as needed
+    const jestConfig = Object.assign({}, baseConfig);
+    // Makes sure we can differentiate between client and server environments
+    // in our React codebase
+    jestConfig.globals = {
+      __CLIENT__: 'false',
+      __SERVER__: 'true',
+      __PRODUCTION__: 'true',
+    };
+    return jestConfig;
+  },
   modifyWebpackConfig: (baseConfig, options) => {
     const appConfig = Object.assign({}, baseConfig);
     const babelLoader = appConfig.module.rules.find(loader => loader.loader === 'babel-loader');
@@ -43,9 +55,9 @@ module.exports = {
     // in our React codebase
     baseConfig.plugins.push(
       new webpack.DefinePlugin({
-        __CLIENT__: options.type === 'client',
-        __SERVER__: options.type !== 'client',
-        __PRODUCTION__: options.environment === 'production',
+        __CLIENT__: JSON.stringify(options.type === 'client'),
+        __SERVER__: JSON.stringify(options.type !== 'client'),
+        __PRODUCTION__: JSON.stringify(options.environment === 'production'),
       })
     );
 
