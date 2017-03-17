@@ -3,38 +3,47 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 :global {
   body {
-    font-family: Neutral, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Neutral, Arial, 'Helvetica Neue', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-variant: common-ligatures;
     font-feature-settings: 'liga', 'kern', 'clig';
   }
-  #root {
+
+  .root {
     max-width: $content-width;
     margin: 0 auto;
     padding: 3em 1em;
   }
+
   .list {
     margin-bottom: 2em;
     padding-left: 1em;
   }
-  h2, h3 {
+
+  h2,
+  h3 {
     display: inline-block;
     position: relative;
     line-height: 1.625;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-top: 3em;
+
     &:first-of-type {
       margin-top: 0;
     }
-    &:before {
+
+    &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -43,12 +52,15 @@ html {
       top: -2px;
     }
   }
+
   h2 {
     font-size: 2.9em;
   }
+
   h3 {
     font-size: 1em;
-    &:before {
+
+    &::before {
       border-top: 2px solid rgb(0, 0, 0);
       top: -2px;
     }
@@ -62,26 +74,27 @@ html {
 .logoInline {
   width: 182px;
   height: 95px;
-  margin: 0 auto 36px auto;
+  margin: 0 auto 36px;
 }
 
 .title {
   display: inline-block;
   position: relative;
   font-size: 1.1428571429em;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .nav {
   text-align: center;
-  margin: 2em 0 4em 0;
+  margin: 2em 0 4em;
   padding: 0;
 }
 
 .navItem {
   display: inline-block;
   margin-left: 8px;
+
   &:first-child {
     margin-left: 0;
   }
@@ -98,7 +111,8 @@ html {
   font-weight: bold;
   color: rgb(0, 0, 0);
   transition: color $default-transition;
-  &:after {
+
+  &::after {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -111,16 +125,20 @@ html {
     transition: transform $default-transition;
     transform: translateX(-105%);
   }
+
   &:hover {
     color: rgb(255, 255, 255);
-    &:after {
+
+    &::after {
       transform: translateX(0);
     }
   }
 }
+
 .activeLink {
-  &:after {
+  color: rgb(255, 255, 255);
+
+  &::after {
     transform: translateX(0);
   }
-  color: rgb(255, 255, 255);
 }

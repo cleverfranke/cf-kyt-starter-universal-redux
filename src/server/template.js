@@ -21,7 +21,7 @@ export default (vo) => {
         ${vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : ''}
       </head>
       <body>
-        <div id="root"><div>${vo.root}</div></div>
+        <div id="root" class="root"><div>${vo.root}</div></div>
         <script>
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
