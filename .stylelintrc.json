@@ -1,8 +1,13 @@
 {
   "extends": "stylelint-config-kyt",
+
   "rules": {
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": ["global"]
-    }]
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "local"],
+      }
+    ]
   }
 }
+w
