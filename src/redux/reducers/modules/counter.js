@@ -2,7 +2,7 @@ const INCREMENT = 'redux-example/counter/INCREMENT';
 const INCREMENT_PROMISE = 'redux-example/counter/INCREMENT_PROMISE';
 const INCREMENT_PROMISE_PENDING = 'redux-example/counter/INCREMENT_PROMISE_PENDING';
 const INCREMENT_PROMISE_FULFILLED = 'redux-example/counter/INCREMENT_PROMISE_FULFILLED';
-const INCREMENT_PROMISE_REJECTED = 'redux-example/counter/INCREMENT_PROMISE_REJECTED';
+const INCREMENT_PROMISE_FAILED = 'redux-example/counter/INCREMENT_PROMISE_FAILED';
 
 const initialState = {
   count: 0,
@@ -36,7 +36,7 @@ export default function reducer(state = initialState, action = {}) {
       };
     }
 
-    case INCREMENT_PROMISE_REJECTED: {
+    case INCREMENT_PROMISE_FAILED: {
       const { rejectionCount } = state;
       return {
         ...state,
@@ -84,7 +84,7 @@ export function shouldIncrement() {
  * this if you want to call an API or request other async methods.
  * Note: Look at the similiarties between the shouldIncrement thunk and this
  * thunk. They both get passed dispatch and getState as arguments, only this
- * action creator immediately dispatches an action with a TYPE and PAYLOAD.
+ * action creator immediately dispatches an action with a TYPE and PROMISE.
  *
  * In this example we are silently failing the rejection error, relying on the
  * reducer to handle the rejection for us. If you ever need to do cleanup or
@@ -97,7 +97,7 @@ export function shouldIncrement() {
 export function promiseIncrement() {
   return dispatch => dispatch({
     type: INCREMENT_PROMISE,
-    payload: new Promise((resolve, reject) => {
+    promise: new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.random() > 0.5) {
           reject('promise increment failed');

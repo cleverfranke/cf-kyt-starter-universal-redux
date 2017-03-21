@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Helmet from 'react-helmet';
 
-import { shouldIncrement, shouldPromiseIncrement } from '../../redux/reducers/modules/counter';
+import { shouldIncrement, promiseIncrement } from '../../redux/reducers/modules/counter';
 import ConnectedCount from '../../components/Count';
 
 export class ReduxContainer extends Component {
@@ -19,7 +19,7 @@ export class ReduxContainer extends Component {
    */
   static needs = [
     shouldIncrement,
-    shouldPromiseIncrement,
+    promiseIncrement,
   ]
 
   componentDidMount() {

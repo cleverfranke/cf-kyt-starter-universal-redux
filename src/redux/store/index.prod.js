@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from '../../helpers/promiseMiddleware';
 
 import rootReducer from '../reducers';
 
 const enhancer = compose(
   // Middleware you want to use in production:
-  applyMiddleware(thunk, promiseMiddleware),
+  applyMiddleware(thunkMiddleware, promiseMiddleware),
 );
 
 
