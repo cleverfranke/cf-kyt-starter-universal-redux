@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "node"
+  - "7"
+install:
+  - npm install -g kyt-cli
+  - kyt-cli setup -p npm -d kyt -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git
+  - cd kyt
+script:
+  - npm run lint
+  - npm run test
+notifications:
+  email: false
