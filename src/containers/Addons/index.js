@@ -5,7 +5,10 @@ import Helmet from 'react-helmet';
 export default function Addons() {
   return (
     <section>
-      <Helmet title="Addons" />
+
+      <Helmet>
+        <title>Addons</title>
+      </Helmet>
 
       <h3>404 status codes</h3>
       <p>

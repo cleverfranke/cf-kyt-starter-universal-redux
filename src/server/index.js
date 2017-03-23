@@ -1,6 +1,7 @@
 
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import express from 'express';
 import compression from 'compression';
@@ -76,6 +77,10 @@ app.use((request, response) => {
           jsBundle: clientAssets.main.js,
           initialState,
         }));
+
+        // Needed to prevent memory leaks on the server
+        // https://github.com/nfl/react-helmet#server-usage
+        const helmet = Helmet.renderStatic();
       };
 
       // Fetch the components from the renderProps and when they have
