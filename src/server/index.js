@@ -80,6 +80,7 @@ app.use((request, response) => {
 
         // Needed to prevent memory leaks on the server
         // https://github.com/nfl/react-helmet#server-usage
+        // 
         const helmet = Helmet.renderStatic();
       };
 
