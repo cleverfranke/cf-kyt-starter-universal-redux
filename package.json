@@ -20,8 +20,18 @@
   "homepage": "https://github.com/cleverfranke/cf-kyt-starter-universal-redux#readme",
   "kyt": {
     "version": "^0.4.0",
-    "files": [".eslintrc.json", "sw-precache-config.js", ".storybook", "stories", "kyt.config.production.js"],
-    "scripts": ["build", "storybook", "build-storybook"]
+    "files": [
+      ".eslintrc.json",
+      "sw-precache-config.js",
+      ".storybook",
+      "stories",
+      "kyt.config.production.js"
+    ],
+    "scripts": [
+      "build",
+      "storybook",
+      "build-storybook"
+    ]
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -38,6 +48,7 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "babel-eslint": "^7.2.0",
     "babel-plugin-transform-class-properties": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
@@ -46,11 +57,11 @@
     "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-svg-loader": "^1.1.1",
+    "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
-    "redux-devtools": "^3.3.1",
+    "stylelint-config-css-modules": "^0.1.0",
     "sw-precache": "^5.1.0",
-    "webpack-merge": "^4.1.0",
-    "@kadira/storybook": "^2.21.0"
+    "webpack-merge": "^4.1.0"
   }
 }

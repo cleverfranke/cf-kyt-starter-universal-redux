@@ -1,6 +1,8 @@
 {
-  "extends": "stylelint-config-kyt",
-
+  "extends": [
+    "stylelint-config-kyt",
+    "stylelint-config-css-modules",
+  ],
   "rules": {
     "selector-pseudo-class-no-unknown": [
       true,
@@ -10,4 +12,3 @@
     ]
   }
 }
-w
