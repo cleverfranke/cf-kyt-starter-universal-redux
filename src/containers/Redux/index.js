@@ -29,7 +29,10 @@ export class ReduxContainer extends Component {
   render() {
     return (
       <section>
-        <Helmet title="Addons" />
+
+        <Helmet>
+          <title>Redux</title>
+        </Helmet>
 
         <h3>Redux example</h3>
         <p>
