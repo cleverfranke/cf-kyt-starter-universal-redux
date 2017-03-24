@@ -1,7 +1,6 @@
 
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import { Helmet } from 'react-helmet';
 
 import express from 'express';
 import compression from 'compression';
