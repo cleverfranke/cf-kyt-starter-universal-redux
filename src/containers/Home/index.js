@@ -7,7 +7,11 @@ import styles from './styles.scss';
 function Home() {
   return (
     <section>
-      <Helmet title="Home" />
+
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+
       <p className={styles.paragraph}>
         Welcome to the CLEVER&deg;FRANKE fork of the <strong>Universal React Starter-kyt</strong>.
         This starter kyt should serve as the base for an advanced,

@@ -7,7 +7,11 @@ import styles from './styles.scss';
 function Tools() {
   return (
     <section>
-      <Helmet title="Tools" />
+
+      <Helmet>
+        <title>Tools</title>
+      </Helmet>
+
       <h3>Default libraries and packages</h3>
       <p>The libraries listed here are installed by React Universal Starter Kyt by default.</p>
       <ul className="list">

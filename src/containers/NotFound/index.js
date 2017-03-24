@@ -5,8 +5,12 @@ import Helmet from 'react-helmet';
 function NotFound() {
   return (
     <section>
-      <Helmet title="404 not found" />
-      <p >
+
+      <Helmet>
+        <title>404 not found</title>
+      </Helmet>
+
+      <p>
         We could not find the thing you were looking for. Sorry!
       </p>
       <p>However, if you check your network panel when loading this page or any other
