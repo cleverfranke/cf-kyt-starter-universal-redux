@@ -1,9 +1,14 @@
 language: node_js
 node_js:
-  - "7"
+  - "6"
+before_script:
+   - npm install -g yarn
+cache:
+  directories:
+  - $HOME/.yarn-cache
 install:
   - npm install -g kyt-cli
-  - kyt-cli setup -p npm -d kyt -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git
+  - kyt-cli setup -p yarn -d kyt --local-path ./cf-kyt-starter-universal-redux/
   - cd kyt
 script:
   - npm run lint
