@@ -6,7 +6,8 @@ install:
   - kyt-cli setup -p npm -d kyt --local-path ./
   - cd kyt
 script:
-  - npm run lint
+  - npm run lint-script
+  - npm run lint-style
   - npm run test
 notifications:
   email: false
