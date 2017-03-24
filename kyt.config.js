@@ -36,7 +36,7 @@ module.exports = {
           options: babelLoader.options,
         },
         {
-          loader: 'react-svg',
+          loader: 'react-svg-loader',
           query: {
             es5: false,
             svgo: {
