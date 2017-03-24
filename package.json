@@ -22,6 +22,7 @@
     "version": "^0.4.0",
     "files": [
       ".eslintrc.json",
+      ".stylelintrc.json",
       "sw-precache-config.js",
       ".storybook",
       "stories",
@@ -60,7 +61,6 @@
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
-    "stylelint-config-css-modules": "^0.1.0",
     "sw-precache": "^5.1.0",
     "webpack-merge": "^4.1.0"
   }
