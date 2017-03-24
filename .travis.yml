@@ -3,7 +3,7 @@ node_js:
   - "7"
 install:
   - npm install -g kyt-cli
-  - kyt-cli setup -p npm -d kyt --local-path ./cf-kyt-starter-universal-redux/
+  - kyt-cli setup -p npm -d kyt --local-path ./
   - cd kyt
 script:
   - npm run lint
