@@ -19,17 +19,6 @@ html {
     font-feature-settings: 'liga', 'kern', 'clig';
   }
 
-  .root {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 3em 1em;
-  }
-
-  .list {
-    margin-bottom: 2em;
-    padding-left: 1em;
-  }
-
   h2,
   h3 {
     display: inline-block;
@@ -65,6 +54,17 @@ html {
       top: -2px;
     }
   }
+}
+
+.root {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 3em 1em;
+}
+
+.list {
+  margin-bottom: 2em;
+  padding-left: 1em;
 }
 
 .header {

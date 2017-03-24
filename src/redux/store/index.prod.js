@@ -6,7 +6,7 @@ import rootReducer from '../reducers';
 
 const enhancer = compose(
   // Middleware you want to use in production:
-  applyMiddleware(thunkMiddleware, promiseMiddleware),
+  applyMiddleware(thunkMiddleware, promiseMiddleware)
 );
 
 
