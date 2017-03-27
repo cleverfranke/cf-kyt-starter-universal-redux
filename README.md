@@ -1,6 +1,7 @@
 # CLEVER°FRANKE Universal React starter-kyt
 
-[![Build Status](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux.svg?branch=master)](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux) [![codecov](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux/branch/master/graph/badge.svg)](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux)
+[![Build Status](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux.svg?branch=master)](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux) [![codecov](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux/branch/master/graph/badge.svg)](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux) [![Dependencies](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux.svg)](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux)
+
 
 This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks, Storybook and Async data loading on the server.
 
