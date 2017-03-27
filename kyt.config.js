@@ -9,6 +9,10 @@ module.exports = {
   modifyJestConfig: (baseConfig) => {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);
+
+    // Enable code coverage statistics for our Github badge
+    jestConfig.collectCoverage = true;
+
     // Makes sure we can differentiate between client and server environments
     // in our React codebase
     jestConfig.globals = {
