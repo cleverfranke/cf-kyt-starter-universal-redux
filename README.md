@@ -1,6 +1,6 @@
 # CLEVER°FRANKE Universal React starter-kyt
 
-[![Build Status](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux.svg?branch=master)](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux)
+[![Build Status](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux.svg?branch=master)](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux) [![codecov](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux/branch/master/graph/badge.svg)](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux)
 
 This starter-kyt should serve as the base for an advanced, server and client-rendered React Redux app. It is based on NYT's Universal React starter-kyt but with the addition of some tools we found useful, most importantly the addition of Redux, Redux-Thunks, Storybook and Async data loading on the server.
 
@@ -52,7 +52,7 @@ The libraries listed here are not present by default in the NYT React Universal 
 - [Redux-Thunks](https://github.com/gaearon/redux-thunk) - Thunk middleware for React Redux
 - [Helmet](https://github.com/nfl/react-helmet) - This reusable React component will manage all of your changes to the document head with support for document title, meta, link, style, script, noscript, and base tags.
 - [React SVG loader](https://github.com/boopathi/react-svg-loader) - Used to load SVG files with Webpack and use them as React Components. This inlines the SVG and allows us to style it with CSS and keep our code clean and 'dry'.
-- [Perf Addons](https://www.npmjs.com/package/react-addons-perf) - React Perf Addons for easy debugging of your web applications performance. We recommend using something like the [React Perf extension](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm) to hook into the Perf Addons and perform your tests.
+- [Perf Addons](https://www.npmjs.com/package/react-addons-perf) - React Perf Addons for easy debugging of your web applications performance. We recommend using something like the [React Perf extension](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm) to hook into the Perf Addons and perform your tests. Please note the Perf Addons will be removed in React when Fibers is introduced to the world.
 
 ## Architecture changes
 - We modified the Express configuration to return 404 status codes when showing a 404 NotFound component.
