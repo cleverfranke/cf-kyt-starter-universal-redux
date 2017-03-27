@@ -2,12 +2,13 @@ language: node_js
 node_js:
   - "7"
 install:
-  - npm install -g kyt-cli
+  - npm install -g kyt-cli codecov
   - kyt-cli setup -p npm -d kyt --local-path ./
   - cd kyt
 script:
   - npm run lint-script
   - npm run lint-style
   - npm run test
+  - codecov
 notifications:
   email: false
