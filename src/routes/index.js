@@ -4,36 +4,36 @@ import Route from 'react-router/lib/Route';
 import IndexRoute from 'react-router/lib/IndexRoute';
 import App from '../containers/App';
 
-// Webpack 2 supports ES2015 `System.import` by auto-
+// Webpack 2 supports ES2015 `import` by auto-
 // chunking assets. Check out the following for more:
 // https://gist.github.com/sokra/27b24881210b56bbaff7#code-splitting-with-es6
 
 const importHome = (nextState, cb) => {
-  System.import('../containers/Home')
+  import('../containers/Home')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importTools = (nextState, cb) => {
-  System.import('../containers/Tools')
+  import('../containers/Tools')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importAddons = (nextState, cb) => {
-  System.import('../containers/Addons')
+  import('../containers/Addons')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importRedux = (nextState, cb) => {
-  System.import('../containers/Redux')
+  import('../containers/Redux')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importNotFound = (nextState, cb) => {
-  System.import('../containers/NotFound')
+  import('../containers/NotFound')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
