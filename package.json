@@ -49,18 +49,18 @@
     "redux": "~3.6.0"
   },
   "devDependencies": {
-    "@kadira/storybook": "~2.21.0",
-    "babel-eslint": "~7.2.0",
-    "babel-plugin-transform-class-properties": "~6.18.0",
-    "babel-plugin-transform-object-rest-spread": "~6.16.0",
+    "@kadira/storybook": "~2.35.3",
+    "babel-eslint": "~7.2.1",
+    "babel-plugin-transform-class-properties": "~6.23.0",
+    "babel-plugin-transform-object-rest-spread": "~6.23.0",
     "babel-preset-kyt-react": "~0.2.0",
-    "enzyme": "~2.7.1",
+    "enzyme": "~2.8.0",
     "react-addons-perf": "~15.4.2",
     "react-addons-test-utils": "~15.4.2",
     "react-svg-loader": "~1.1.1",
-    "redux-devtools": "~3.3.1",
+    "redux-devtools": "~3.3.2",
     "redux-devtools-dock-monitor": "~1.1.1",
-    "redux-devtools-log-monitor": "~1.1.1",
+    "redux-devtools-log-monitor": "~1.2.0",
     "sw-precache": "~5.1.0",
     "webpack-merge": "~4.1.0"
   }
