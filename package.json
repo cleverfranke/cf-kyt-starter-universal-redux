@@ -19,10 +19,8 @@
   },
   "homepage": "https://github.com/cleverfranke/cf-kyt-starter-universal-redux#readme",
   "kyt": {
-    "version": "~0.5.1",
     "files": [
       ".eslintrc.json",
-      ".stylelintrc.json",
       "sw-precache-config.js",
       ".storybook",
       "stories",
@@ -49,6 +47,7 @@
     "redux": "~3.6.0"
   },
   "devDependencies": {
+    "kyt": "0.5.2",
     "@kadira/storybook": "~2.35.3",
     "babel-eslint": "~7.2.1",
     "babel-plugin-transform-class-properties": "~6.23.0",
