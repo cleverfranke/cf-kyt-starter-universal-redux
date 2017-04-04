@@ -9,15 +9,10 @@ export default function promiseMiddleware() {
     const SUCCESS = `${type}_FULFILLED`;
     const REQUEST = `${type}_PENDING`;
     const FAILURE = `${type}_FAILED`;
+
     next({ ...rest, type: REQUEST });
     return promise
-      .then((res) => {
-        next({ ...rest, res, type: SUCCESS });
-        return true;
-      })
-      .catch((error) => {
-        next({ ...rest, error, type: FAILURE });
-        return false;
-      });
+      .then(result => next({ ...rest, result, type: SUCCESS }))
+      .catch(error => next({ ...rest, error, type: FAILURE }));
   };
 }

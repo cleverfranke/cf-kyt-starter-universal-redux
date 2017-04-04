@@ -12,7 +12,8 @@ module.exports = {
 
     // Enable code coverage statistics for our Github badge
     jestConfig.collectCoverage = true;
-    jestConfig.coverageDirectory = './coverage/',
+    jestConfig.coverageDirectory = '../coverage/';
+    jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(client|server/index.js)'];
 
     // Makes sure we can differentiate between client and server environments
     // in our React codebase

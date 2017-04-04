@@ -1,14 +1,16 @@
-const INCREMENT = 'redux-example/counter/INCREMENT';
-const INCREMENT_PROMISE = 'redux-example/counter/INCREMENT_PROMISE';
-const INCREMENT_PROMISE_PENDING = 'redux-example/counter/INCREMENT_PROMISE_PENDING';
-const INCREMENT_PROMISE_FULFILLED = 'redux-example/counter/INCREMENT_PROMISE_FULFILLED';
-const INCREMENT_PROMISE_FAILED = 'redux-example/counter/INCREMENT_PROMISE_FAILED';
+export const INCREMENT = 'redux-example/counter/INCREMENT';
+export const INCREMENT_PROMISE = 'redux-example/counter/INCREMENT_PROMISE';
+export const INCREMENT_PROMISE_PENDING = 'redux-example/counter/INCREMENT_PROMISE_PENDING';
+export const INCREMENT_PROMISE_FULFILLED = 'redux-example/counter/INCREMENT_PROMISE_FULFILLED';
+export const INCREMENT_PROMISE_FAILED = 'redux-example/counter/INCREMENT_PROMISE_FAILED';
 
-const initialState = {
+export const initialState = {
   count: 0,
   promiseCount: 0,
   promisePending: false,
   rejectionCount: 0,
+  result: null,
+  error: null,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -33,6 +35,8 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         promisePending: false,
         promiseCount: promiseCount + 1,
+        result: action.result,
+        error: null,
       };
     }
 
@@ -42,6 +46,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         promisePending: false,
         rejectionCount: rejectionCount + 1,
+        error: action.error,
       };
     }
 
@@ -95,16 +100,17 @@ export function shouldIncrement() {
  *
  */
 export function promiseIncrement() {
-  return dispatch => dispatch({
+  return (dispatch, getState) => dispatch({
     type: INCREMENT_PROMISE,
     promise: new Promise((resolve, reject) => {
+      const { counter } = getState();
       setTimeout(() => {
-        if (Math.random() > 0.5) {
+        if (counter.rejectionCount < 1) {
           reject('promise increment failed');
-        } else {
-          resolve('promise increment executed OK');
         }
+        resolve('promise increment executed OK');
       }, 1000);
     }),
-  }).catch(() => {});
+  })
+  .catch(() => {});
 }
