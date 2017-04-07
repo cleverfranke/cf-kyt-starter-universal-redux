@@ -24,7 +24,11 @@
       "sw-precache-config.js",
       ".storybook",
       "stories",
-      "kyt.config.production.js"
+      "kyt.config.production.js",
+      "docker-compose-production.yml",
+      "docker-compose.yml",
+      "Dockerfile",
+      "nginx.conf"
     ],
     "scripts": [
       "build",

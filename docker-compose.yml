@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  web:
+    build: .
+    ports:
+      - '3000-3001:3000-3001'
+    volumes:
+      - .:/code/
+      - node_modules:/code/node_modules
+      - build:/code/build
+
+volumes:
+    node_modules:
+    build:
