@@ -1,7 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Helmet from 'react-helmet';
 
 import { shouldIncrement, promiseIncrement } from '../../redux/reducers/modules/counter';
@@ -58,9 +57,11 @@ export class ReduxContainer extends Component {
 function mapStateToProps() {
   return { };
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
+
+function mapDispatchToProps() {
+  return {
     shouldIncrement,
-  }, dispatch);
+  };
 }
+export { mapStateToProps, mapDispatchToProps };
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxContainer);
