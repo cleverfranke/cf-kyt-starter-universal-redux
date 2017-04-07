@@ -9,6 +9,7 @@ script:
   - npm run lint-script
   - npm run lint-style
   - npm run test
+  - npm run test-coverage
   - codecov
 notifications:
   email: false

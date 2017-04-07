@@ -53,6 +53,8 @@ const routes = (
 // Unfortunately, HMR breaks when we dynamically resolve
 // routes so we need to require them here as a workaround.
 // https://github.com/gaearon/react-hot-loader/issues/288
+
+/* istanbul ignore if */
 if (module.hot) {
   require('../containers/Home');    // eslint-disable-line global-require
   require('../containers/Tools');   // eslint-disable-line global-require

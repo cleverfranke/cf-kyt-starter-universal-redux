@@ -19,6 +19,7 @@ export default function configureStore(initialState = {}) {
   const store = createStore(rootReducer, initialState, enhancer);
 
   // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
+  /* istanbul ignore if */
   if (module.hot) {
     module.hot.accept('../reducers', () =>
       store.replaceReducer(require('../reducers')) // eslint-disable-line global-require
