@@ -5,11 +5,18 @@ install:
   - npm install -g kyt-cli codecov
   - kyt-cli setup -p npm -d kyt --local-path ./
   - cd kyt
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
   - npm run lint-script
   - npm run lint-style
   - npm run test
+  - bash e2e.sh
   - npm run test-coverage
   - codecov
 notifications:
   email: false
+addons:
+  apt:
+    packages:
+      - xvfb

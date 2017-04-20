@@ -6,7 +6,8 @@
   "scripts": {
     "build": "kyt build --config kyt.config.production.js && sw-precache --config=sw-precache-config.js",
     "storybook": "start-storybook -p 6006 --dont-track",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:e2e": "PROTOCOL=http HOST=0.0.0.0 PORT=8000 TEST_ENV=e2e kyt test"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,14 @@
       "sw-precache-config.js",
       ".storybook",
       "stories",
-      "kyt.config.production.js"
+      "kyt.config.production.js",
+      "e2e.sh"
     ],
     "scripts": [
       "build",
       "storybook",
-      "build-storybook"
+      "build-storybook",
+      "test:e2e"
     ]
   },
   "dependencies": {
@@ -47,7 +50,6 @@
     "redux-thunk": "~2.2.0"
   },
   "devDependencies": {
-    "kyt": "0.5.2",
     "@kadira/storybook": "~2.35.3",
     "babel-eslint": "~7.2.1",
     "babel-plugin-transform-async-to-generator": "~6.22.0",
@@ -56,6 +58,8 @@
     "babel-preset-kyt-react": "~0.2.0",
     "enzyme": "~2.8.0",
     "eslint": "~3.19.0",
+    "kyt": "~0.5.2",
+    "nightmare": "~2.10.0",
     "react-addons-perf": "~15.4.2",
     "react-addons-test-utils": "~15.4.2",
     "react-svg-loader": "~1.1.1",

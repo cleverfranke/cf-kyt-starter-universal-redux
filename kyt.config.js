@@ -10,8 +10,14 @@ module.exports = {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);
 
+    // When running the end-to-end tests change the testRegex value to match
+    // related tests
+    if (process.env.TEST_ENV && process.env.TEST_ENV === 'e2e') {
+      jestConfig.testRegex = '.e2e.jsx?$';
+    }
+
     // Exclude a few files and folders from code coverage
-    jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(client|routes|server/index.js)'];
+    jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(e2e|client|routes|server/index.js)'];
 
     // Makes sure we can differentiate between client and server environments
     // in our React codebase
