@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Template component should handle not passing bundles in the props gracefully 1`] = `
+"
+    <!DOCTYPE html>
+    <html lang=\\"en\\"  >
+      <head>
+        <title data-react-helmet=\\"true\\"></title>
+        <meta httpEquiv=\\"X-UA-Compatible\\" content=\\"IE=edge\\" />
+        <meta charSet='utf-8' />
+        <meta httpEquiv=\\"Content-Language\\" content=\\"en\\" />
+        <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\" />
+        <meta name=\\"theme-color\\" content=\\"white\\" />
+        
+        
+        <link id=\\"favicon\\" rel=\\"shortcut icon\\" href=\\"/favicon.png\\" sizes=\\"16x16 32x32\\" type=\\"image/png\\" />
+        <link rel=\\"manifest\\" href=\\"manifest.json\\">
+        
+      </head>
+      <body  >
+        <div id=\\"root\\" class=\\"root\\"><div><div>Empty</div></div></div>
+        <script>
+          window.__PRELOADED_STATE__ = [object Object]
+        </script>
+        <script async src=\\"undefined\\"></script>
+        
+          <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js');
+              });
+            }
+          </script>
+      </body>
+    </html>
+  "
+`;
+
+exports[`The Template component should match the snapshot 1`] = `
+"
+    <!DOCTYPE html>
+    <html lang=\\"en\\"  >
+      <head>
+        <title data-react-helmet=\\"true\\"></title>
+        <meta httpEquiv=\\"X-UA-Compatible\\" content=\\"IE=edge\\" />
+        <meta charSet='utf-8' />
+        <meta httpEquiv=\\"Content-Language\\" content=\\"en\\" />
+        <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\" />
+        <meta name=\\"theme-color\\" content=\\"white\\" />
+        
+        
+        <link id=\\"favicon\\" rel=\\"shortcut icon\\" href=\\"/favicon.png\\" sizes=\\"16x16 32x32\\" type=\\"image/png\\" />
+        <link rel=\\"manifest\\" href=\\"manifest.json\\">
+        <link rel=\\"stylesheet\\" type=\\"text/css\\" href=\\"test.css\\">
+      </head>
+      <body  >
+        <div id=\\"root\\" class=\\"root\\"><div><div>Empty</div></div></div>
+        <script>
+          window.__PRELOADED_STATE__ = [object Object]
+        </script>
+        <script async src=\\"test.js\\"></script>
+        
+          <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js');
+              });
+            }
+          </script>
+      </body>
+    </html>
+  "
+`;
