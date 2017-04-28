@@ -4,8 +4,14 @@ services:
 
   web:
     build: .
+    command: npm run start
     ports:
       - '8000:8000'
     volumes:
       - .:/code/
-      - /code/node_modules
+      - node_modules:/code/node_modules
+      - build:/code/build
+
+volumes:
+    node_modules:
+    build:

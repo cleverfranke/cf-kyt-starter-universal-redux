@@ -9,7 +9,7 @@ module.exports = {
   reactHotLoader: true,
   debug: false,
   serverURL: 'http://0.0.0.0:3000',
-  clientUrl: 'http://0.0.0.0:3001',
+  clientURL: 'http://0.0.0.0:3001',
   modifyJestConfig: (baseConfig) => {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);
