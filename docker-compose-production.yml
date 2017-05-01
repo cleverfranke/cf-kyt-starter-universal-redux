@@ -1,17 +1,18 @@
-version: '2'
+version: '3'
 
 services:
 
-  web:
-    build: .
-    command: npm run start
+  web-production:
+    build:
+      context: ./
+      dockerfile: Dockerfile-production
     ports:
       - '8000:8000'
     volumes:
       - .:/code/
-      - node_modules:/code/node_modules
-      - build:/code/build
+      - front-end-deps-production:/code/node_modules
+      - dist-production:/code/build
 
 volumes:
-    node_modules:
-    build:
+    front-end-deps-production:
+    dist-production:

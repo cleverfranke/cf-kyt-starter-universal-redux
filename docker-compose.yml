@@ -1,16 +1,16 @@
-version: '2'
+version: '3'
 
 services:
 
-  web:
+  web-dev:
     build: .
     ports:
       - '3000-3001:3000-3001'
     volumes:
       - .:/code/
-      - node_modules:/code/node_modules
-      - build:/code/build
+      - front-end-deps-dev:/code/node_modules
+      - dist-dev:/code/build
 
 volumes:
-    node_modules:
-    build:
+    front-end-deps-dev:
+    dist-dev:
