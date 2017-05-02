@@ -28,6 +28,8 @@
       "docker-compose-production.yml",
       "docker-compose.yml",
       "Dockerfile",
+      "Dockerfile-production",
+      "deploy.sh",
       "nginx.conf"
     ],
     "scripts": [
