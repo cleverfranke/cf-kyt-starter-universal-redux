@@ -14,9 +14,6 @@
   },
 
   "globals": {
-    "__SERVER__": true,
-    "__CLIENT__": true,
-    "__PRODUCTION__": true
   }
 
 }

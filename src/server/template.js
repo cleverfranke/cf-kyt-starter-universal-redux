@@ -26,7 +26,7 @@ export default (vo) => {
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
         <script async src="${vo.jsBundle}"></script>
-        ${__PRODUCTION__ ? `
+        ${NODE_ENV === 'production' ? `
           <script>
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {

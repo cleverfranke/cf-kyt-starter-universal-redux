@@ -18,17 +18,9 @@ module.exports = {
 
     // Exclude a few files and folders from code coverage
     jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(e2e|client|routes|server/index.js)'];
-
-    // Makes sure we can differentiate between client and server environments
-    // in our React codebase
-    jestConfig.globals = {
-      __CLIENT__: 'false',
-      __SERVER__: 'true',
-      __PRODUCTION__: 'true',
-    };
     return jestConfig;
   },
-  modifyWebpackConfig: (baseConfig, options) => {
+  modifyWebpackConfig: (baseConfig) => {
     const appConfig = Object.assign({}, baseConfig);
     const babelLoader = appConfig.module.rules.find(loader => loader.loader === 'babel-loader');
 
@@ -60,17 +52,6 @@ module.exports = {
       ],
     };
     appConfig.module.rules.unshift(svgRules);
-
-    // Makes sure we can differentiate between client and server environments
-    // in our React codebase
-    baseConfig.plugins.push(
-      new webpack.DefinePlugin({
-        __CLIENT__: JSON.stringify(options.type === 'client'),
-        __SERVER__: JSON.stringify(options.type !== 'client'),
-        __PRODUCTION__: JSON.stringify(options.environment === 'production'),
-      })
-    );
-
     return appConfig;
   },
 };
