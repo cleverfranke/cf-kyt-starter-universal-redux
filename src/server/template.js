@@ -26,14 +26,15 @@ export default (vo) => {
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
         <script async src="${vo.jsBundle}"></script>
-        ${NODE_ENV === 'production' ? `
+        ${process.env.NODE_ENV === 'production' ? `
           <script>
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/service-worker.js');
               });
             }
-          </script>` : ''}
+          </script>` : ''
+        }
       </body>
     </html>
   `;
