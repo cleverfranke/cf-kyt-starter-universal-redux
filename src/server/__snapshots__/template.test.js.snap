@@ -24,13 +24,6 @@ exports[`The Template component should handle not passing bundles in the props g
         </script>
         <script async src=\\"undefined\\"></script>
         
-          <script>
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js');
-              });
-            }
-          </script>
       </body>
     </html>
   "
@@ -60,13 +53,6 @@ exports[`The Template component should match the snapshot 1`] = `
         </script>
         <script async src=\\"test.js\\"></script>
         
-          <script>
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js');
-              });
-            }
-          </script>
       </body>
     </html>
   "
