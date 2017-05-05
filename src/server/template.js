@@ -33,8 +33,7 @@ export default (vo) => {
                 navigator.serviceWorker.register('/service-worker.js');
               });
             }
-          </script>` : ''
-        }
+          </script>` : ''}
       </body>
     </html>
   `;
