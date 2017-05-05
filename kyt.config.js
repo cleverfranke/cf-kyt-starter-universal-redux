@@ -16,6 +16,11 @@ module.exports = {
       jestConfig.testRegex = '.e2e.jsx?$';
     }
 
+    // Add globals you add to eslintrc's globals key here as well
+    jestConfig.globals = {
+      KYT: false,
+    };
+
     // Exclude a few files and folders from code coverage
     jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(e2e|client|routes|server/index.js)'];
     return jestConfig;
