@@ -1,7 +1,7 @@
 # This dockerfile is made to create a dev server by default
 # Run docker-compose up to start working on your application
 
-FROM node:7.9
+FROM node:7.9-alpine
 
 ENV NPM_CONFIG_LOGLEVEL warn
 

@@ -2,23 +2,21 @@ version: '3'
 
 services:
 
-  nginx:
-    image: nginx:1.13
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
     ports:
-      - 80:80
-      - 443:443
-    restart: on-failure
-    links:
-      - web-production
+      - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./logs:/var/log/nginx
-      - ./cache:/tmp/cache
+      - /var/run/docker.sock:/tmp/docker.sock:ro
 
-  web-production:
+  starter-kyt:
     build:
       context: ./
       dockerfile: Dockerfile-production
+    container_name: starter-kyt
+    environment:
+      - VIRTUAL_HOST=localhost
     volumes:
       - .:/code/
       - front-end-deps-production:/code/node_modules
