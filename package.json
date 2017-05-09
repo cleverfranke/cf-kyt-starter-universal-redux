@@ -29,7 +29,8 @@
       "docker-compose.yml",
       "Dockerfile",
       "Dockerfile-production",
-      "deploy.sh"
+      "deploy.sh",
+      "e2e.sh"
     ],
     "scripts": [
       "build",
