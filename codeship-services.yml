@@ -1,0 +1,7 @@
+web:
+  build:
+    image: cleverfranke/starter-kyt
+    dockerfile_path: Dockerfile-production
+  cached: true
+  volumes:
+    - ./:/code
