@@ -26,6 +26,11 @@
       ".storybook",
       "stories",
       "kyt.config.production.js",
+      "docker-compose-production.yml",
+      "docker-compose.yml",
+      "Dockerfile",
+      "Dockerfile-production",
+      "deploy.sh",
       "e2e.sh"
     ],
     "scripts": [

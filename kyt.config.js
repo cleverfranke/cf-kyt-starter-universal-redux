@@ -3,9 +3,13 @@
 
 const webpack = require('webpack');
 
+// We've changed server and client URL to 0.0.0.0 instead of localhost
+// so they are reachable when running in a Docker container
 module.exports = {
   reactHotLoader: true,
   debug: false,
+  serverURL: 'http://0.0.0.0:3000',
+  clientURL: 'http://0.0.0.0:3001',
   modifyJestConfig: (baseConfig) => {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);

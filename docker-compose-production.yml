@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  starter-kyt:
+    build:
+      context: ./
+      dockerfile: Dockerfile-production
+    container_name: starter-kyt
+    environment:
+      - VIRTUAL_HOST=localhost
+    volumes:
+      - .:/code/
+      - front-end-deps-production:/code/node_modules
+      - dist-production:/code/build
+
+volumes:
+    front-end-deps-production:
+    dist-production:
