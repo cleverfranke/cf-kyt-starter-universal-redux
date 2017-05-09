@@ -37,12 +37,14 @@ export function Count(props) {
       should be 1.</p>
 
       <button
+        id="incrementCount"
         className={styles.countButton}
         onClick={props.shouldIncrement}
       >
         Increment count
       </button>
       <button
+        id="incrementAsyncCount"
         className={asyncButtonClass}
         onClick={props.promiseIncrement}
       >

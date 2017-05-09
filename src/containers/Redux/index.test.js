@@ -8,6 +8,7 @@ import {
 } from './';
 
 import { shouldIncrement } from '../../redux/reducers/modules/counter';
+
 const handleIncrement = () => {};
 
 describe('The Redux container', () => {

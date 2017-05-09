@@ -14,19 +14,22 @@ module.exports = {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);
 
-    // Exclude a few files and folders from code coverage
-    jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(client|routes|server/index.js)'];
+    // When running the end-to-end tests change the testRegex value to match
+    // related tests
+    if (process.env.TEST_ENV && process.env.TEST_ENV === 'e2e') {
+      jestConfig.testRegex = '.e2e.jsx?$';
+    }
 
-    // Makes sure we can differentiate between client and server environments
-    // in our React codebase
+    // Add globals you add to eslintrc's globals key here as well
     jestConfig.globals = {
-      __CLIENT__: 'false',
-      __SERVER__: 'true',
-      __PRODUCTION__: 'true',
+      KYT: false,
     };
+
+    // Exclude a few files and folders from code coverage
+    jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(e2e|client|routes|server/index.js)'];
     return jestConfig;
   },
-  modifyWebpackConfig: (baseConfig, options) => {
+  modifyWebpackConfig: (baseConfig) => {
     const appConfig = Object.assign({}, baseConfig);
     const babelLoader = appConfig.module.rules.find(loader => loader.loader === 'babel-loader');
 
@@ -58,17 +61,6 @@ module.exports = {
       ],
     };
     appConfig.module.rules.unshift(svgRules);
-
-    // Makes sure we can differentiate between client and server environments
-    // in our React codebase
-    baseConfig.plugins.push(
-      new webpack.DefinePlugin({
-        __CLIENT__: JSON.stringify(options.type === 'client'),
-        __SERVER__: JSON.stringify(options.type !== 'client'),
-        __PRODUCTION__: JSON.stringify(options.environment === 'production'),
-      })
-    );
-
     return appConfig;
   },
 };
