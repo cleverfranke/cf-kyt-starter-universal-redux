@@ -40,15 +40,20 @@
       "test:e2e"
     ]
   },
+  "greenkeeper": {
+    "ignore": [
+      "react-router"
+    ]
+  },
   "dependencies": {
     "classnames": "~2.2.5",
     "compression": "~1.6.2",
     "express": "~4.15.2",
-    "react": "~15.4.2",
-    "react-dom": "~15.4.2",
+    "react": "~15.5.4",
+    "react-dom": "~15.5.4",
     "react-helmet": "~5.0.2",
     "react-redux": "~5.0.3",
-    "react-router": "~2.6.1",
+    "react-router": "~2.8.1",
     "react-router-redux": "~4.0.8",
     "redux": "~3.6.0",
     "redux-promise-middleware": "~4.2.0",
@@ -57,8 +62,8 @@
   "devDependencies": {
     "@kadira/storybook": "~2.35.3",
     "babel-eslint": "~7.2.1",
-    "babel-plugin-transform-async-to-generator": "~6.22.0",
-    "babel-plugin-transform-class-properties": "~6.23.0",
+    "babel-plugin-transform-async-to-generator": "~6.24.1",
+    "babel-plugin-transform-class-properties": "~6.24.1",
     "babel-plugin-transform-object-rest-spread": "~6.23.0",
     "babel-preset-kyt-react": "~0.2.0",
     "enzyme": "~2.8.0",
@@ -66,11 +71,11 @@
     "kyt": "~0.5.2",
     "nightmare": "~2.10.0",
     "react-addons-perf": "~15.4.2",
-    "react-addons-test-utils": "~15.4.2",
+    "react-addons-test-utils": "~15.5.1",
     "react-svg-loader": "~1.1.1",
-    "redux-devtools": "~3.3.2",
+    "redux-devtools": "~3.4.0",
     "redux-devtools-dock-monitor": "~1.1.1",
-    "redux-devtools-log-monitor": "~1.2.0",
+    "redux-devtools-log-monitor": "~1.3.0",
     "sw-precache": "~5.1.0",
     "webpack-merge": "~4.1.0"
   }
