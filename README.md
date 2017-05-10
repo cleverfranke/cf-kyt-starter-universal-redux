@@ -1,5 +1,7 @@
 # CLEVER°FRANKE Universal React starter-kyt
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cleverfranke/cf-kyt-starter-universal-redux.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux.svg?branch=master)](https://travis-ci.org/cleverfranke/cf-kyt-starter-universal-redux) [![codecov](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux/branch/master/graph/badge.svg)](https://codecov.io/gh/cleverfranke/cf-kyt-starter-universal-redux) [![Dependencies](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux.svg)](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux) [![devDependencies Status](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux/dev-status.svg)](https://david-dm.org/cleverfranke/cf-kyt-starter-universal-redux?type=dev)
 
 
