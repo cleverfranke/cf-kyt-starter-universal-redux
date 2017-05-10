@@ -35,6 +35,28 @@ After installation these commands are useful to learn
 `yarn build && yarn start`
 
 
+## Running in Docker
+
+We've added Dockerfiles and Docker Compose files for easier deployments.
+
+### Development in Docker
+You can run the application in a Docker container in development mode. This container supports hot reloading, redux devtools, file syncing, pretty much anything you want and have when you run Docker in development mode locally as well.
+`docker-compose up`
+
+### Production mode
+Eventually you'll want to run your app in production mode on some server.
+In a nutshell, deployment looks like this:
+
+1. Create a new production ready image of your applications
+2. Push the images to your own Docker Repository
+3. Pull the images from the repository to your server
+4. Start the containers on your server
+
+Make sure to edit deploy.sh to target your own Docker Repository.
+
+If you want to run production locally you can use the following command:
+`docker-compose -f docker-compose-production.yml up`
+
 ## Tools
 
 The following are some of the tools included in this starter-kyt:
