@@ -9,8 +9,9 @@ import classNames from 'classnames/bind';
 import styles from './styles.scss';
 import { shouldIncrement, promiseIncrement } from '../../redux/reducers/modules/counter';
 
+const cx = classNames.bind(styles);
+
 export function Count(props) {
-  const cx = classNames.bind(styles);
   const asyncButtonClass = cx({
     countButton: true,
     inProgress: props.promisePending,
