@@ -1,4 +1,3 @@
-
 import Template from './template';
 
 let wrapper;
@@ -7,8 +6,10 @@ let props;
 describe('The Template component', () => {
   beforeEach(() => {
     props = {
-      cssBundle: 'test.css',
-      jsBundle: 'test.js',
+      manifestJSBundle: 'manifest.js',
+      mainJSBundle: 'main.js',
+      vendorJSBundle: 'vendor.js',
+      mainCSSBundle: 'main.css',
       root: '<div>Empty</div>',
       initialState: {},
     };
