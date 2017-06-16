@@ -27,7 +27,6 @@ export default vo => {
         <script>
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
-        <script async src="${vo.jsBundle}"></script>
         ${process.env.NODE_ENV === 'production' ? `
           <script>
             if ('serviceWorker' in navigator) {
