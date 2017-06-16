@@ -9,31 +9,31 @@ import App from '../containers/App';
 // https://gist.github.com/sokra/27b24881210b56bbaff7#code-splitting-with-es6
 
 const importHome = (nextState, cb) => {
-  import('../containers/Home')
+  import(/* webpackChunkName: "home" */ '../containers/Home')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importTools = (nextState, cb) => {
-  import('../containers/Tools')
+  import(/* webpackChunkName: "tools" */ '../containers/Tools')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importAddons = (nextState, cb) => {
-  import('../containers/Addons')
+  import(/* webpackChunkName: "addons" */ '../containers/Addons')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importRedux = (nextState, cb) => {
-  import('../containers/Redux')
+  import(/* webpackChunkName: "redux" */ '../containers/Redux')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };
 
 const importNotFound = (nextState, cb) => {
-  import('../containers/NotFound')
+  import(/* webpackChunkName: "notfound" */ '../containers/NotFound')
     .then(module => cb(null, module.default))
     .catch((e) => { throw e; });
 };

@@ -1,6 +1,5 @@
-
-import { renderToString } from 'react-dom/server';
-import { Provider } from 'react-redux';
+import {renderToString} from 'react-dom/server';
+import {Provider} from 'react-redux';
 
 import express from 'express';
 import compression from 'compression';
@@ -16,6 +15,7 @@ import template from './template';
 import routes from '../routes';
 
 const clientAssets = require(KYT.ASSETS_MANIFEST); // eslint-disable-line import/no-dynamic-require
+const port = parseInt(KYT.SERVER_PORT, 10);
 const app = express();
 
 // Remove annoying Express header addition.
@@ -34,9 +34,10 @@ app.use(express.static(path.join(process.cwd(), KYT.PUBLIC_DIR)));
  * the static needs array, as long as they are not async
  */
 function fetchComponentData(dispatch, components, params) {
-  const needs = components.reduce((prev, current) => (current.needs || [])
-      .concat(prev)
-  , []);
+  const needs = components.reduce(
+    (prev, current) => (current.needs || []).concat(prev),
+    [],
+  );
   const promises = needs.map(need => dispatch(need(params)));
   return Promise.all(promises);
 }
@@ -45,11 +46,14 @@ function fetchComponentData(dispatch, components, params) {
 app.use((request, response) => {
   const history = createMemoryHistory(request.originalUrl);
 
-  match({ routes, history }, (error, redirectLocation, renderProps) => {
+  match({routes, history}, (error, redirectLocation, renderProps) => {
     if (error) {
       response.status(500).send(error.message);
     } else if (redirectLocation) {
-      response.redirect(302, `${redirectLocation.pathname}${redirectLocation.search}`);
+      response.redirect(
+        302,
+        `${redirectLocation.pathname}${redirectLocation.search}`,
+      );
     } else if (renderProps) {
       // This is the initial store
       const store = configureStore();
@@ -66,27 +70,36 @@ app.use((request, response) => {
         }
 
         // Populate the HTML document with the current redux store
-        response.status(isNotFoundRoute ? 404 : 200).send(template({
-          root: renderToString(
-            <Provider store={store}>
-              <RouterContext {...renderProps} />
-            </Provider>
+        response.status(isNotFoundRoute ? 404 : 200).send(
+          template({
+            root: renderToString(
+              <Provider store={store}>
+                <RouterContext {...renderProps} />
+              </Provider>,
             ),
-          cssBundle: clientAssets.main.css,
-          jsBundle: clientAssets.main.js,
-          initialState,
-        }));
+            manifestJSBundle: clientAssets['manifest.js'],
+            mainJSBundle: clientAssets['main.js'],
+            vendorJSBundle: clientAssets['vendor.js'],
+            mainCSSBundle: clientAssets['main.css'],
+            initialState,
+          }),
+        );
       };
 
       // Fetch the components from the renderProps and when they have
       // promises, add them to a list of promises to resolve before starting
       // a HTML response
-      fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
-        .then(render);
+      fetchComponentData(
+        store.dispatch,
+        renderProps.components,
+        renderProps.params,
+      ).then(render);
     } else {
       response.status(404).send('Not found');
     }
   });
 });
 
-app.listen(parseInt(KYT.SERVER_PORT, 10));
+app.listen(port, () => {
+  console.log(`✅  Express server started on port: ${port}`); // eslint-disable-line no-console
+});

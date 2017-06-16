@@ -22,10 +22,12 @@ exports[`The Template component should handle not passing bundles in the props g
         <script>
           window.__PRELOADED_STATE__ = [object Object]
         </script>
-        <script async src=\\"undefined\\"></script>
         
-      </body>
-    </html>
+      
+      
+      
+    </body>
+  </html>
   "
 `;
 
@@ -44,16 +46,18 @@ exports[`The Template component should match the snapshot 1`] = `
         
         <link id=\\"favicon\\" rel=\\"shortcut icon\\" href=\\"/favicon.png\\" sizes=\\"16x16 32x32\\" type=\\"image/png\\" />
         <link rel=\\"manifest\\" href=\\"manifest.json\\">
-        <link rel=\\"stylesheet\\" type=\\"text/css\\" href=\\"test.css\\">
+        <link rel=\\"stylesheet\\" type=\\"text/css\\" href=\\"main.css\\">
       </head>
       <body  >
         <div id=\\"root\\" class=\\"root\\"><div><div>Empty</div></div></div>
         <script>
           window.__PRELOADED_STATE__ = [object Object]
         </script>
-        <script async src=\\"test.js\\"></script>
         
-      </body>
-    </html>
+      <script defer src=\\"manifest.js\\"></script>
+      <script defer src=\\"vendor.js\\"></script>
+      <script defer src=\\"main.js\\"></script>
+    </body>
+  </html>
   "
 `;
