@@ -67,7 +67,7 @@
     "babel-plugin-transform-object-rest-spread": "~6.23.0",
     "babel-preset-kyt-react": "~0.2.0",
     "enzyme": "~2.8.0",
-    "eslint": "~3.19.0",
+    "eslint": "~4.1.1",
     "kyt": "~0.6.0",
     "nightmare": "~2.10.0",
     "prop-types": "^15.5.9",
