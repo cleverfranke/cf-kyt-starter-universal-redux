@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Route from 'react-router/lib/Route';
 import IndexRoute from 'react-router/lib/IndexRoute';
@@ -11,31 +10,41 @@ import App from '../containers/App';
 const importHome = (nextState, cb) => {
   import(/* webpackChunkName: "home" */ '../containers/Home')
     .then(module => cb(null, module.default))
-    .catch((e) => { throw e; });
+    .catch(e => {
+      throw e;
+    });
 };
 
 const importTools = (nextState, cb) => {
   import(/* webpackChunkName: "tools" */ '../containers/Tools')
     .then(module => cb(null, module.default))
-    .catch((e) => { throw e; });
+    .catch(e => {
+      throw e;
+    });
 };
 
 const importAddons = (nextState, cb) => {
   import(/* webpackChunkName: "addons" */ '../containers/Addons')
     .then(module => cb(null, module.default))
-    .catch((e) => { throw e; });
+    .catch(e => {
+      throw e;
+    });
 };
 
 const importRedux = (nextState, cb) => {
   import(/* webpackChunkName: "redux" */ '../containers/Redux')
     .then(module => cb(null, module.default))
-    .catch((e) => { throw e; });
+    .catch(e => {
+      throw e;
+    });
 };
 
 const importNotFound = (nextState, cb) => {
   import(/* webpackChunkName: "notfound" */ '../containers/NotFound')
     .then(module => cb(null, module.default))
-    .catch((e) => { throw e; });
+    .catch(e => {
+      throw e;
+    });
 };
 
 // We use `getComponent` to dynamically load routes.
@@ -56,11 +65,11 @@ const routes = (
 
 /* istanbul ignore if */
 if (module.hot) {
-  require('../containers/Home');    // eslint-disable-line global-require
-  require('../containers/Tools');   // eslint-disable-line global-require
-  require('../containers/Redux');   // eslint-disable-line global-require
-  require('../containers/Addons');   // eslint-disable-line global-require
-  require('../containers/NotFound');   // eslint-disable-line global-require
+  require('../containers/Home'); // eslint-disable-line global-require
+  require('../containers/Tools'); // eslint-disable-line global-require
+  require('../containers/Redux'); // eslint-disable-line global-require
+  require('../containers/Addons'); // eslint-disable-line global-require
+  require('../containers/NotFound'); // eslint-disable-line global-require
 }
 
 export default routes;

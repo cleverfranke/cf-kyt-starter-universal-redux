@@ -1,11 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import {
-  ReduxContainer,
-  mapStateToProps,
-  mapDispatchToProps,
-} from './';
+import { ReduxContainer, mapStateToProps, mapDispatchToProps } from './';
 
 import { shouldIncrement } from '../../redux/reducers/modules/counter';
 
