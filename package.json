@@ -64,7 +64,7 @@
     "babel-eslint": "~7.2.1",
     "babel-plugin-transform-async-to-generator": "~6.24.1",
     "babel-plugin-transform-class-properties": "~6.24.1",
-    "babel-plugin-transform-object-rest-spread": "~6.23.0",
+    "babel-plugin-transform-object-rest-spread": "~6.26.0",
     "babel-preset-kyt-react": "~0.2.0",
     "eslint": "~4.8.0",
     "enzyme": "~2.9.1",
