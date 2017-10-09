@@ -63,8 +63,7 @@ describe('The counter reducer', () => {
       reducer(initialState, {
         type: INCREMENT,
       })
-    )
-    .toEqual({ ...initialState, count: 1 });
+    ).toEqual({ ...initialState, count: 1 });
   });
 
   // We should test the pending state here
@@ -80,8 +79,7 @@ describe('The counter reducer', () => {
       reducer(initialState, {
         type: INCREMENT_PROMISE_PENDING,
       })
-    )
-    .toEqual({ ...initialState, promisePending: true });
+    ).toEqual({ ...initialState, promisePending: true });
   });
 
   it('should handle INCREMENT_PROMISE_FULFILLED', () => {
@@ -90,8 +88,7 @@ describe('The counter reducer', () => {
         type: INCREMENT_PROMISE_FULFILLED,
         result: 'test result',
       })
-    )
-    .toEqual({ ...initialState, promiseCount: 1, result: 'test result' });
+    ).toEqual({ ...initialState, promiseCount: 1, result: 'test result' });
   });
 
   it('should handle INCREMENT_PROMISE_FAILED', () => {
@@ -100,8 +97,7 @@ describe('The counter reducer', () => {
         type: INCREMENT_PROMISE_FAILED,
         error: 'this test should fail',
       })
-    )
-    .toEqual({
+    ).toEqual({
       ...initialState,
       rejectionCount: 1,
       error: 'this test should fail',

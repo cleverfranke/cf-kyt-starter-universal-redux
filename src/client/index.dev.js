@@ -1,4 +1,3 @@
-
 import React from 'react';
 import browserHistory from 'react-router/lib/browserHistory';
 import Router from 'react-router/lib/Router';
@@ -28,12 +27,9 @@ const mount = () => {
 
   render(
     <AppContainer>
-      <Provider store={store} >
+      <Provider store={store}>
         <div>
-          <Router
-            routes={routes}
-            history={history}
-          />
+          <Router routes={routes} history={history} />
           <DevTools />
         </div>
       </Provider>
@@ -52,7 +48,6 @@ window.React = React;
  * the performance from within your console
  */
 window.Perf = Perf;
-
 
 if (module.hot) {
   module.hot.accept('../routes', () => {

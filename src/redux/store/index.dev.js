@@ -12,7 +12,6 @@ const enhancer = compose(
   DevTools.instrument()
 );
 
-
 export default function configureStore(initialState = {}) {
   // Note: only Redux >= 3.1.0 supports passing enhancer as third argument.
   // See https://github.com/rackt/redux/releases/tag/v3.1.0
@@ -21,8 +20,9 @@ export default function configureStore(initialState = {}) {
   // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
   /* istanbul ignore if */
   if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers')) // eslint-disable-line global-require
+    module.hot.accept(
+      '../reducers',
+      () => store.replaceReducer(require('../reducers')) // eslint-disable-line global-require
     );
   }
 
