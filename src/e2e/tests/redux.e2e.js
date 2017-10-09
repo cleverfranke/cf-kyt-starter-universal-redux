@@ -29,7 +29,9 @@ describe('When visiting the redux page', () => {
       .evaluate(() => document.body.textContent)
       .end();
 
-    expect(text).toContain('Below is a small component - found in components/Count/ which does little less than showing the value of the different count reducer values in Redux.');
+    expect(text).toContain(
+      'Below is a small component - found in components/Count/ which does little less than showing the value of the different count reducer values in Redux.'
+    );
   });
 
   test('an user can increment the counter by clicking the "Increment count" button', async () => {
