@@ -12,27 +12,25 @@ It is assumed you know what [kyt](https://github.com/NYTimes/kyt) is and why you
 
 Generally speaking we feel it's a better idea to install packages locally than globally. That's why our setup instructions differ a little bit from the kyt general installation instructions. If you find any bug try to see if [installing the official way](https://github.com/NYTimes/kyt#quick-start) helps and please let us know by submitting an issue.
 
-The instructions assume you have Yarn already installed. If not, [install Yarn](https://yarnpkg.com/lang/en/docs/install/). Most of us use [Homebrew](https://brew.sh/) for stuff like that.
-
 1. Go to the folder where you want to install the starter-kyt.
-2. `yarn init`
+2. `npm init`
 Use your own settings or press enter until it's done
-3. `yarn add kyt-cli --dev`
+3. `npm install kyt-cli -D`
 4. `node_modules/.bin/kyt-cli setup -r https://github.com/cleverfranke/cf-kyt-starter-universal-redux.git`
 
 After installation these commands are useful to learn
 
 #### Start a development server
-`yarn dev`
+`npm run dev`
 
 #### Develop components in isolation within Storybook
-`yarn storybook`
+`npm run storybook`
 
 #### Create a static version of Storybook for deployment
-`yarn build-storybook`
+`npm run build-storybook`
 
 #### Start a production server
-`yarn build && yarn start`
+`npm build && npm start`
 
 
 ## Running in Docker
