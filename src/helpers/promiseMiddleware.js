@@ -1,5 +1,5 @@
 export default function promiseMiddleware() {
-  return next => (action) => {
+  return next => action => {
     const { promise, type, ...rest } = action;
 
     if (!promise) {
