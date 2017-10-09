@@ -1,8 +1,6 @@
 // Base kyt config.
 // Edit these properties to make changes.
 
-const webpack = require('webpack');
-
 // We've changed server and client URL to 0.0.0.0 instead of localhost
 // so they are reachable when running in a Docker container
 module.exports = {
@@ -10,7 +8,7 @@ module.exports = {
   debug: false,
   serverURL: 'http://0.0.0.0:3000',
   clientURL: 'http://0.0.0.0:3001',
-  modifyJestConfig: (baseConfig) => {
+  modifyJestConfig: baseConfig => {
     // modify baseConfig as needed
     const jestConfig = Object.assign({}, baseConfig);
 
@@ -29,7 +27,7 @@ module.exports = {
     jestConfig.coveragePathIgnorePatterns = ['<rootDir>/(e2e|client|routes|server/index.js)'];
     return jestConfig;
   },
-  modifyWebpackConfig: (baseConfig) => {
+  modifyWebpackConfig: baseConfig => {
     const appConfig = Object.assign({}, baseConfig);
     const babelLoader = appConfig.module.rules.find(loader => loader.loader === 'babel-loader');
 
@@ -52,9 +50,7 @@ module.exports = {
             es5: false,
             svgo: {
               pretty: true,
-              plugins: [
-                { removeStyleElement: true },
-              ],
+              plugins: [{ removeStyleElement: true }],
             },
           },
         },
