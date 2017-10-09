@@ -1,6 +1,6 @@
 import Helmet from 'react-helmet';
 
-const getDeferScript = src => src ? `<script defer src="${src}"></script>` : '';
+const getDeferScript = src => (src ? `<script defer src="${src}"></script>` : '');
 
 /* eslint-disable prefer-template, max-len */
 
@@ -20,14 +20,17 @@ export default vo => {
         ${helmet.link.toString()}
         <link id="favicon" rel="shortcut icon" href="/favicon.png" sizes="16x16 32x32" type="image/png" />
         <link rel="manifest" href="manifest.json">
-        ${vo.mainCSSBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.mainCSSBundle + '">' : ''}
+        ${vo.mainCSSBundle
+          ? '<link rel="stylesheet" type="text/css" href="' + vo.mainCSSBundle + '">'
+          : ''}
       </head>
       <body ${helmet.bodyAttributes.toString()} >
         <div id="root" class="root"><div>${vo.root}</div></div>
         <script>
           window.__PRELOADED_STATE__ = ${vo.initialState}
         </script>
-        ${process.env.NODE_ENV === 'production' ? `
+        ${process.env.NODE_ENV === 'production'
+          ? `
           <script>
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
@@ -55,7 +58,8 @@ export default vo => {
                 console.error('Error during service worker registration:', e);
               });
             }
-          </script>` : ''}
+          </script>`
+          : ''}
       ${getDeferScript(vo.manifestJSBundle)}
       ${getDeferScript(vo.vendorJSBundle)}
       ${getDeferScript(vo.mainJSBundle)}

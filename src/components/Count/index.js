@@ -18,7 +18,9 @@ export function Count(props) {
   });
   return (
     <div>
-      <p>Count: <strong>{ props.count }</strong></p>
+      <p>
+        Count: <strong>{props.count}</strong>
+      </p>
       <p>When loading this page (directly) for the first time the count should show a value of:</p>
       <ul className="list">
         <li>
@@ -32,17 +34,15 @@ export function Count(props) {
         </li>
       </ul>
       <p>
-        Promise resolve count: <strong>{ props.promiseCount }</strong><br />
-        Promise rejection count: <strong>{ props.rejectionCount }</strong>
+        Promise resolve count: <strong>{props.promiseCount}</strong>
+        <br />
+        Promise rejection count: <strong>{props.rejectionCount}</strong>
       </p>
-      <p>When loading this page (directly) for the first time one of the promise counts
-      should be 1.</p>
+      <p>
+        When loading this page (directly) for the first time one of the promise counts should be 1.
+      </p>
 
-      <button
-        id="incrementCount"
-        className={styles.countButton}
-        onClick={props.shouldIncrement}
-      >
+      <button id="incrementCount" className={styles.countButton} onClick={props.shouldIncrement}>
         Increment count
       </button>
       <button
