@@ -100,17 +100,17 @@ export function shouldIncrement() {
  *
  */
 export function promiseIncrement() {
-  return (dispatch, getState) => dispatch({
-    type: INCREMENT_PROMISE,
-    promise: new Promise((resolve, reject) => {
-      const { counter } = getState();
-      setTimeout(() => {
-        if (counter.rejectionCount < 1) {
-          reject('promise increment failed');
-        }
-        resolve('promise increment executed OK');
-      }, 1000);
-    }),
-  })
-  .catch(() => {});
+  return (dispatch, getState) =>
+    dispatch({
+      type: INCREMENT_PROMISE,
+      promise: new Promise((resolve, reject) => {
+        const { counter } = getState();
+        setTimeout(() => {
+          if (counter.rejectionCount < 1) {
+            reject('promise increment failed');
+          }
+          resolve('promise increment executed OK');
+        }, 1000);
+      }),
+    }).catch(() => {});
 }
