@@ -8,7 +8,7 @@ describe('store', () => {
     const configureStore = require('./').default; // eslint-disable-line global-require
     const actual = configureStore().getState();
     const expected = {
-      routing: { locationBeforeTransitions: null },
+      routing: { location: null },
       counter: initialCounterState,
     };
 
@@ -22,7 +22,7 @@ describe('store', () => {
     const configureStore = require('./').default; // eslint-disable-line global-require
     const actual = configureStore().getState();
     const expected = {
-      routing: { locationBeforeTransitions: null },
+      routing: { location: null },
       counter: initialCounterState,
     };
 
