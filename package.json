@@ -73,7 +73,7 @@
     "prop-types": "^15.5.9",
     "react-addons-perf": "~15.4.2",
     "react-addons-test-utils": "~15.6.0",
-    "react-svg-loader": "~1.1.1",
+    "react-svg-loader": "~2.0.0-alpha.4",
     "react-test-renderer": "^15.5.4",
     "redux-devtools": "~3.4.0",
     "redux-devtools-dock-monitor": "~1.1.1",
