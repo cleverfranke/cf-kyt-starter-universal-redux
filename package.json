@@ -78,7 +78,7 @@
     "redux-devtools": "~3.4.0",
     "redux-devtools-dock-monitor": "~1.1.1",
     "redux-devtools-log-monitor": "~1.4.0",
-    "sw-precache": "~5.1.0",
+    "sw-precache": "~5.2.1",
     "webpack-merge": "~4.1.0"
   }
 }
