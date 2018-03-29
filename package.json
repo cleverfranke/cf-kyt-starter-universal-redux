@@ -69,7 +69,7 @@
     "eslint": "~4.12.0",
     "enzyme": "~2.9.1",
     "kyt": "~0.7.0",
-    "nightmare": "~2.10.0",
+    "nightmare": "~3.0.1",
     "prop-types": "^15.5.9",
     "react-addons-perf": "~15.4.2",
     "react-addons-test-utils": "~15.6.0",
