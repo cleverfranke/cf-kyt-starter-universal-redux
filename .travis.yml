@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "7"
+  - "10"
 install:
   - npm install -g kyt-cli codecov
   - kyt-cli setup -p npm -d kyt --local-path ./
