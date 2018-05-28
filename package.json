@@ -57,7 +57,7 @@
     "react-router-redux": "~4.0.8",
     "redux": "~3.7.0",
     "redux-promise-middleware": "~5.1.0",
-    "redux-thunk": "~2.2.0"
+    "redux-thunk": "~2.3.0"
   },
   "devDependencies": {
     "@kadira/storybook": "~2.35.3",
